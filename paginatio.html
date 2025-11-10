@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Betman Javier Marín Rueda | Abogado</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/lucide-static@latest/font/lucide.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --azul-profundo: #1b2430;
+      --azul-claro: #2e3b55;
+      --azul-suave: #44526f;
+      --dorado: #c8a062;
+      --gris-suave: #f3f4f6;
+    }
+
+    /* === Animación del Hero con degradado dinámico === */
+    .hero {
+      background: linear-gradient(270deg, var(--azul-profundo), var(--azul-claro), var(--azul-suave));
+      background-size: 600% 600%;
+      animation: gradientShift 18s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Efecto de aparición */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s ease-out forwards;
+    }
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Navbar */
+    .navbar {
+      transition: all 0.3s ease;
+    }
+    .navbar.scrolled {
+      background-color: var(--azul-profundo);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    /* Tarjetas */
+    .card {
+      background: white;
+      border: 1px solid rgba(200,160,98,0.25);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      color: var(--azul-profundo);
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      border-color: var(--dorado);
+    }
+
+    /* Botón */
+    .btn-primary {
+      background: var(--dorado);
+      color: white;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      background: #e3b76a;
+      transform: scale(1.05);
+    }
+
+    /* Divisor */
+    .divider {
+      width: 80px;
+      height: 3px;
+      margin: 1rem auto;
+      background: var(--dorado);
+      border-radius: 2px;
+    }
+
+    footer {
+      background: linear-gradient(135deg, #1b2430, #2e3b55);
+      color: #ddd;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- Navbar -->
+  <nav class="navbar fixed w-full top-0 z-50 bg-transparent py-4">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-xl md:text-2xl font-semibold text-white tracking-wide">Betman Javier Marín Rueda</h1>
+      <ul class="flex space-x-6 text-sm md:text-base font-medium">
+        <li><a href="#home" class="text-white hover:text-[var(--dorado)]">Inicio</a></li>
+        <li><a href="#about" class="text-white hover:text-[var(--dorado)]">Sobre mí</a></li>
+        <li><a href="#services" class="text-white hover:text-[var(--dorado)]">Servicios</a></li>
+        <li><a href="#differentiation" class="text-white hover:text-[var(--dorado)]">Diferenciación</a></li>
+        <li><a href="#contact" class="text-white hover:text-[var(--dorado)]">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero min-h-screen flex flex-col justify-center items-center text-center px-6">
+    <h2 class="text-4xl md:text-6xl font-bold text-white mb-4 fade-up">
+      Excelencia Jurídica a su Servicio
+    </h2>
+    <p class="text-lg md:text-2xl text-gray-200 mb-8 fade-up" style="animation-delay: 0.4s;">
+      Compromiso, experiencia y resultados comprobables en el ámbito legal.
+    </p>
+    <a href="#contact" class="btn-primary py-3 px-8 rounded-full fade-up" style="animation-delay: 0.8s;">
+      Contáctame
+    </a>
+  </section>
+
+  <!-- Sobre mí -->
+  <section id="about" class="py-20 px-6 bg-[var(--gris-suave)] text-center">
+    <h3 class="text-3xl font-semibold text-[var(--azul-profundo)]">Sobre el Profesional</h3>
+    <div class="divider"></div>
+    <p class="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed">
+      Betman Javier Marín Rueda es un abogado con más de veinte años de trayectoria en derecho corporativo, civil y familiar.
+      Se distingue por su compromiso ético, la cercanía con el cliente y la capacidad de ofrecer soluciones jurídicas
+      integrales adaptadas a las necesidades reales de cada caso.
+    </p>
+  </section>
+
+  <!-- Ecosistema -->
+  <section id="ecosystem" class="py-20 px-6 bg-white text-center text-gray-100"
+    style="background: linear-gradient(135deg, var(--azul-profundo), var(--azul-claro));">
+    <h3 class="text-3xl font-semibold text-[var(--dorado)]">Ecosistema Jurídico Integral</h3>
+    <div class="divider"></div>
+    <p class="max-w-4xl mx-auto text-gray-200 text-lg leading-relaxed">
+      No se trata de ofrecer respuestas aisladas, sino de construir un sistema legal integral que asegure continuidad,
+      respaldo y estabilidad en cada aspecto jurídico. Nuestro objetivo es que cada cliente cuente con una estructura sólida
+      que garantice confianza y seguridad a largo plazo.
+    </p>
+  </section>
+
+  <!-- Servicios -->
+  <section id="services" class="py-20 px-6 bg-[var(--gris-suave)] text-center">
+    <h3 class="text-3xl font-semibold text-[var(--azul-profundo)]">Servicios Profesionales</h3>
+    <div class="divider"></div>
+
+    <div class="grid md:grid-cols-3 gap-10 mt-12 max-w-6xl mx-auto">
+      <div class="card p-8 rounded-xl">
+        <i class="lucide-briefcase text-[var(--dorado)] text-5xl mb-4"></i>
+        <h4 class="text-xl font-semibold mb-2">Derecho Corporativo</h4>
+        <p class="text-gray-700">
+          Asesoría legal empresarial, estructuración de contratos, cumplimiento normativo y acompañamiento en procesos comerciales.
+        </p>
+      </div>
+      <div class="card p-8 rounded-xl">
+        <i class="lucide-heart text-[var(--dorado)] text-5xl mb-4"></i>
+        <h4 class="text-xl font-semibold mb-2">Derecho Familiar</h4>
+        <p class="text-gray-700">
+          Representación en procesos de familia, herencias, custodias y conciliaciones bajo un enfoque humano y ético.
+        </p>
+      </div>
+      <div class="card p-8 rounded-xl">
+        <i class="lucide-scale text-[var(--dorado)] text-5xl mb-4"></i>
+        <h4 class="text-xl font-semibold mb-2">Derecho Civil</h4>
+        <p class="text-gray-700">
+          Soluciones en propiedad, contratos, daños y perjuicios, y litigios, con estrategias efectivas y medibles.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diferenciación -->
+  <section id="differentiation" class="py-20 px-6 bg-white text-center">
+    <h3 class="text-3xl font-semibold text-[var(--azul-profundo)]">Diferenciación y Compromiso</h3>
+    <div class="divider"></div>
+    <div class="max-w-4xl mx-auto text-gray-700 text-lg leading-relaxed">
+      <p class="mb-6">
+        <strong>Tranquilidad garantizada:</strong> procesos organizados, comunicación clara y cumplimiento jurídico sin improvisaciones.
+      </p>
+      <p class="mb-6">
+        <strong>Resultados medibles:</strong> disminución de riesgos legales, tiempos optimizados y satisfacción comprobada de los clientes.
+      </p>
+      <p class="mb-6">
+        <strong>Cumplimiento total:</strong> acompañamiento en todas las etapas legales con responsabilidad, confidencialidad y ética profesional.
+      </p>
+      <p>
+        <strong>Diferenciación:</strong> cada estrategia se diseña con precisión jurídica, compromiso y orientación a resultados sostenibles.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contact" class="py-20 px-6 bg-[var(--gris-suave)] text-center">
+    <h3 class="text-3xl font-semibold text-[var(--azul-profundo)]">Contacto</h3>
+    <div class="divider"></div>
+    <div class="max-w-lg mx-auto bg-white p-10 rounded-xl shadow-xl">
+      <p class="text-lg text-[var(--azul-profundo)] font-semibold mb-2">Correo electrónico:</p>
+      <p><a href="mailto:betmanjavier@hotmail.com" class="text-[var(--azul-claro)] underline">betmanjavier@hotmail.com</a></p>
+      <p class="mt-4 text-lg text-[var(--azul-profundo)] font-semibold mb-2">Teléfonos:</p>
+      <p>300 631 7790 | 317 382 1846</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-gray-400">
+    <p>&copy; 2025 Betman Javier Marín Rueda - Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
