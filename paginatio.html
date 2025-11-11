@@ -3,224 +3,242 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Betman Javier Marín Rueda | Abogado</title>
+  <title>Betman Javier Marín Rueda - Abogado</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/lucide-static@latest/font/lucide.css" rel="stylesheet">
-
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     :root {
-      --azul-profundo: #1b2430;
-      --azul-claro: #2e3b55;
-      --azul-suave: #44526f;
-      --dorado: #c8a062;
-      --gris-suave: #f3f4f6;
+      --azul-profundo: #1a2a44;
+      --dorado-elegante: #c8a951;
+      --gris-suave: #f5f6f8;
     }
 
-    /* === Animación del Hero con degradado dinámico === */
-    .hero {
-      background: linear-gradient(270deg, var(--azul-profundo), var(--azul-claro), var(--azul-suave));
-      background-size: 600% 600%;
-      animation: gradientShift 18s ease infinite;
-    }
-
-    @keyframes gradientShift {
+    @keyframes fondoMovido {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
-    /* Efecto de aparición */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 1s ease-out forwards;
-    }
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .fondo-animado {
+      background: linear-gradient(270deg, #1a2a44, #2c3e50, #b89e5c);
+      background-size: 400% 400%;
+      animation: fondoMovido 12s ease infinite;
     }
 
-    /* Navbar */
-    .navbar {
-      transition: all 0.3s ease;
-    }
-    .navbar.scrolled {
-      background-color: var(--azul-profundo);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
-
-    /* Tarjetas */
-    .card {
-      background: white;
-      border: 1px solid rgba(200,160,98,0.25);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: all 0.4s ease;
-      color: var(--azul-profundo);
-    }
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-      border-color: var(--dorado);
+    .nombre-abogado {
+      font-family: 'Cinzel Decorative', serif;
+      color: #f8f9fa; /* Blanco marfil elegante */
+      font-size: 3.8rem; /* Más grande para mayor presencia */
+      letter-spacing: 3px;
+      text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
+      margin-bottom: 1.5rem;
     }
 
-    /* Botón */
-    .btn-primary {
-      background: var(--dorado);
+    .numero-circulo {
+      background-color: var(--dorado-elegante);
       color: white;
-      font-weight: 600;
-      transition: all 0.3s ease;
+      font-weight: bold;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
     }
-    .btn-primary:hover {
-      background: #e3b76a;
-      transform: scale(1.05);
+    .numero-circulo:hover {
+      transform: scale(1.1);
     }
 
-    /* Divisor */
-    .divider {
-      width: 80px;
-      height: 3px;
-      margin: 1rem auto;
-      background: var(--dorado);
-      border-radius: 2px;
+    .carrusel-container {
+      position: relative;
+      overflow: hidden;
     }
 
-    footer {
-      background: linear-gradient(135deg, #1b2430, #2e3b55);
-      color: #ddd;
+    .carrusel {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
     }
+
+    .tarjeta {
+      min-width: 100%;
+      flex-shrink: 0;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 1rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      text-align: center;
+    }
+
+    .tarjeta i {
+      color: var(--dorado-elegante);
+      transition: transform 0.3s ease;
+    }
+
+    .tarjeta:hover i {
+      transform: scale(1.1);
+      filter: brightness(1.2);
+    }
+
+    .flecha {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: var(--dorado-elegante);
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 0.4rem 0.8rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .carrusel-container:hover .flecha {
+      opacity: 1;
+    }
+
+    .flecha.izq { left: 1rem; }
+    .flecha.der { right: 1rem; }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
 </head>
-<body class="bg-white text-gray-900">
 
-  <!-- Navbar -->
-  <nav class="navbar fixed w-full top-0 z-50 bg-transparent py-4">
-    <div class="container mx-auto flex justify-between items-center px-6">
-      <h1 class="text-xl md:text-2xl font-semibold text-white tracking-wide">Betman Javier Marín Rueda</h1>
-      <ul class="flex space-x-6 text-sm md:text-base font-medium">
-        <li><a href="#home" class="text-white hover:text-[var(--dorado)]">Inicio</a></li>
-        <li><a href="#about" class="text-white hover:text-[var(--dorado)]">Sobre mí</a></li>
-        <li><a href="#services" class="text-white hover:text-[var(--dorado)]">Servicios</a></li>
-        <li><a href="#differentiation" class="text-white hover:text-[var(--dorado)]">Diferenciación</a></li>
-        <li><a href="#contact" class="text-white hover:text-[var(--dorado)]">Contacto</a></li>
-      </ul>
-    </div>
-  </nav>
+<body class="text-gray-900">
 
   <!-- Hero -->
-  <section id="home" class="hero min-h-screen flex flex-col justify-center items-center text-center px-6">
-    <h2 class="text-4xl md:text-6xl font-bold text-white mb-4 fade-up">
-      Excelencia Jurídica a su Servicio
-    </h2>
-    <p class="text-lg md:text-2xl text-gray-200 mb-8 fade-up" style="animation-delay: 0.4s;">
+  <section class="fondo-animado text-white text-center py-40 px-6">
+    <h2 class="nombre-abogado mb-6">Betman Javier Marín Rueda</h2>
+    <h1 class="text-6xl font-extrabold mb-6 drop-shadow-lg">Excelencia Jurídica a su Servicio</h1>
+    <p class="text-2xl font-light max-w-3xl mx-auto">
       Compromiso, experiencia y resultados comprobables en el ámbito legal.
     </p>
-    <a href="#contact" class="btn-primary py-3 px-8 rounded-full fade-up" style="animation-delay: 0.8s;">
-      Contáctame
-    </a>
   </section>
 
-  <!-- Sobre mí -->
-  <section id="about" class="py-20 px-6 bg-[var(--gris-suave)] text-center">
-    <h3 class="text-3xl font-semibold text-[var(--azul-profundo)]">Sobre el Profesional</h3>
-    <div class="divider"></div>
-    <p class="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed">
-      Betman Javier Marín Rueda es un abogado con más de veinte años de trayectoria en derecho corporativo, civil y familiar.
-      Se distingue por su compromiso ético, la cercanía con el cliente y la capacidad de ofrecer soluciones jurídicas
-      integrales adaptadas a las necesidades reales de cada caso.
-    </p>
-  </section>
-
-  <!-- Ecosistema -->
-  <section id="ecosystem" class="py-20 px-6 bg-white text-center text-gray-100"
-    style="background: linear-gradient(135deg, var(--azul-profundo), var(--azul-claro));">
-    <h3 class="text-3xl font-semibold text-[var(--dorado)]">Ecosistema Jurídico Integral</h3>
-    <div class="divider"></div>
-    <p class="max-w-4xl mx-auto text-gray-200 text-lg leading-relaxed">
-      No se trata de ofrecer respuestas aisladas, sino de construir un sistema legal integral que asegure continuidad,
-      respaldo y estabilidad en cada aspecto jurídico. Nuestro objetivo es que cada cliente cuente con una estructura sólida
-      que garantice confianza y seguridad a largo plazo.
-    </p>
-  </section>
-
-  <!-- Servicios -->
-  <section id="services" class="py-20 px-6 bg-[var(--gris-suave)] text-center">
-    <h3 class="text-3xl font-semibold text-[var(--azul-profundo)]">Servicios Profesionales</h3>
-    <div class="divider"></div>
-
-    <div class="grid md:grid-cols-3 gap-10 mt-12 max-w-6xl mx-auto">
-      <div class="card p-8 rounded-xl">
-        <i class="lucide-briefcase text-[var(--dorado)] text-5xl mb-4"></i>
-        <h4 class="text-xl font-semibold mb-2">Derecho Corporativo</h4>
-        <p class="text-gray-700">
-          Asesoría legal empresarial, estructuración de contratos, cumplimiento normativo y acompañamiento en procesos comerciales.
-        </p>
-      </div>
-      <div class="card p-8 rounded-xl">
-        <i class="lucide-heart text-[var(--dorado)] text-5xl mb-4"></i>
-        <h4 class="text-xl font-semibold mb-2">Derecho Familiar</h4>
-        <p class="text-gray-700">
-          Representación en procesos de familia, herencias, custodias y conciliaciones bajo un enfoque humano y ético.
-        </p>
-      </div>
-      <div class="card p-8 rounded-xl">
-        <i class="lucide-scale text-[var(--dorado)] text-5xl mb-4"></i>
-        <h4 class="text-xl font-semibold mb-2">Derecho Civil</h4>
-        <p class="text-gray-700">
-          Soluciones en propiedad, contratos, daños y perjuicios, y litigios, con estrategias efectivas y medibles.
-        </p>
-      </div>
+  <!-- Sobre el Profesional -->
+  <section id="sobre" class="py-20 px-6 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-semibold text-[var(--azul-profundo)] mb-8">Perfil Profesional</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Betman Javier Marín Rueda es un abogado integral que domina todas las ramas del derecho. Su profundo conocimiento en ámbitos corporativos, civiles, familiares, laborales, administrativos, penales y fiscales le permite brindar asesoría de alto nivel.  
+        Se distingue por su ética irreprochable, su acercamiento humano y su capacidad para ofrecer soluciones jurídicas precisas, efectivas y adaptadas a cada realidad.  
+        Como profesional combina experiencia con empatía, técnica con estrategia y defensa con servicio.
+      </p>
     </div>
   </section>
 
-  <!-- Diferenciación -->
-  <section id="differentiation" class="py-20 px-6 bg-white text-center">
-    <h3 class="text-3xl font-semibold text-[var(--azul-profundo)]">Diferenciación y Compromiso</h3>
-    <div class="divider"></div>
-    <div class="max-w-4xl mx-auto text-gray-700 text-lg leading-relaxed">
-      <p class="mb-6">
-        <strong>Tranquilidad garantizada:</strong> procesos organizados, comunicación clara y cumplimiento jurídico sin improvisaciones.
-      </p>
-      <p class="mb-6">
-        <strong>Resultados medibles:</strong> disminución de riesgos legales, tiempos optimizados y satisfacción comprobada de los clientes.
-      </p>
-      <p class="mb-6">
-        <strong>Cumplimiento total:</strong> acompañamiento en todas las etapas legales con responsabilidad, confidencialidad y ética profesional.
-      </p>
-      <p>
-        <strong>Diferenciación:</strong> cada estrategia se diseña con precisión jurídica, compromiso y orientación a resultados sostenibles.
-      </p>
+  <!-- Servicios Profesionales -->
+  <section id="servicios" class="py-20 px-6 bg-[var(--gris-suave)]">
+    <h3 class="text-3xl font-semibold text-center text-[var(--azul-profundo)] mb-10">
+      Servicios Profesionales
+    </h3>
+
+    <div class="max-w-4xl mx-auto carrusel-container">
+      <div class="carrusel" id="slider">
+        <div class="tarjeta">
+          <i data-lucide="briefcase" class="w-10 h-10 mx-auto mb-4"></i>
+          <h4 class="text-2xl font-semibold text-[var(--azul-profundo)] mb-3">Derecho Laboral</h4>
+          <p class="text-gray-700 text-lg">Asesoría en relaciones laborales, seguridad social y cumplimiento normativo empresarial.</p>
+        </div>
+        <div class="tarjeta">
+          <i data-lucide="file-text" class="w-10 h-10 mx-auto mb-4"></i>
+          <h4 class="text-2xl font-semibold text-[var(--azul-profundo)] mb-3">Derecho Administrativo</h4>
+          <p class="text-gray-700 text-lg">Gestión y defensa en procedimientos administrativos y contratación estatal.</p>
+        </div>
+        <div class="tarjeta">
+          <i data-lucide="home" class="w-10 h-10 mx-auto mb-4"></i>
+          <h4 class="text-2xl font-semibold text-[var(--azul-profundo)] mb-3">Propiedad Horizontal</h4>
+          <p class="text-gray-700 text-lg">Asesoramiento integral en gestión y reglamentos de copropiedad.</p>
+        </div>
+        <div class="tarjeta">
+          <i data-lucide="shield" class="w-10 h-10 mx-auto mb-4"></i>
+          <h4 class="text-2xl font-semibold text-[var(--azul-profundo)] mb-3">Derecho Penal</h4>
+          <p class="text-gray-700 text-lg">Defensa técnica penal con ética, confidencialidad y compromiso total.</p>
+        </div>
+        <div class="tarjeta">
+          <i data-lucide="landmark" class="w-10 h-10 mx-auto mb-4"></i>
+          <h4 class="text-2xl font-semibold text-[var(--azul-profundo)] mb-3">Derecho Fiscal</h4>
+          <p class="text-gray-700 text-lg">Consultoría en temas tributarios y representación ante autoridades fiscales.</p>
+        </div>
+        <div class="tarjeta">
+          <i data-lucide="gavel" class="w-10 h-10 mx-auto mb-4"></i>
+          <h4 class="text-2xl font-semibold text-[var(--azul-profundo)] mb-3">Derecho Procesal</h4>
+          <p class="text-gray-700 text-lg">Estrategia procesal efectiva en litigios judiciales y arbitrales.</p>
+        </div>
+        <div class="tarjeta">
+          <i data-lucide="handshake" class="w-10 h-10 mx-auto mb-4"></i>
+          <h4 class="text-2xl font-semibold text-[var(--azul-profundo)] mb-3">Derecho Mercantil</h4>
+          <p class="text-gray-700 text-lg">Asesoría en contratos, sociedades, fusiones y cumplimiento empresarial.</p>
+        </div>
+        <div class="tarjeta">
+          <i data-lucide="scale" class="w-10 h-10 mx-auto mb-4"></i>
+          <h4 class="text-2xl font-semibold text-[var(--azul-profundo)] mb-3">Derecho Constitucional</h4>
+          <p class="text-gray-700 text-lg">Defensa de derechos fundamentales y acciones constitucionales.</p>
+        </div>
+      </div>
+
+      <div class="flecha izq" onclick="mover(-1)">&#8592;</div>
+      <div class="flecha der" onclick="mover(1)">&#8594;</div>
+    </div>
+  </section>
+
+  <!-- Diferenciación y Compromiso -->
+  <section id="diferenciacion" class="py-20 px-6 bg-white">
+    <h3 class="text-3xl font-semibold text-center text-[var(--azul-profundo)]">Diferenciación y Compromiso</h3>
+    <div class="max-w-4xl mx-auto mt-10 space-y-8 text-gray-700 text-lg leading-relaxed">
+      <div class="flex items-start">
+        <div class="numero-circulo">1</div>
+        <p><strong>Tranquilidad garantizada:</strong> Procesos organizados, comunicación clara y cumplimiento jurídico sin improvisaciones.</p>
+      </div>
+      <div class="flex items-start">
+        <div class="numero-circulo">2</div>
+        <p><strong>Resultados medibles:</strong> Reducción de riesgos legales, tiempos optimizados y satisfacción comprobada de los clientes.</p>
+      </div>
+      <div class="flex items-start">
+        <div class="numero-circulo">3</div>
+        <p><strong>Cumplimiento total:</strong> Acompañamiento integral con responsabilidad, confidencialidad y ética profesional.</p>
+      </div>
+      <div class="flex items-start">
+        <div class="numero-circulo">4</div>
+        <p><strong>Diferenciación:</strong> Estrategias jurídicas diseñadas con precisión, compromiso y orientación a resultados sostenibles.</p>
+      </div>
     </div>
   </section>
 
   <!-- Contacto -->
-  <section id="contact" class="py-20 px-6 bg-[var(--gris-suave)] text-center">
-    <h3 class="text-3xl font-semibold text-[var(--azul-profundo)]">Contacto</h3>
-    <div class="divider"></div>
-    <div class="max-w-lg mx-auto bg-white p-10 rounded-xl shadow-xl">
-      <p class="text-lg text-[var(--azul-profundo)] font-semibold mb-2">Correo electrónico:</p>
-      <p><a href="mailto:betmanjavier@hotmail.com" class="text-[var(--azul-claro)] underline">betmanjavier@hotmail.com</a></p>
-      <p class="mt-4 text-lg text-[var(--azul-profundo)] font-semibold mb-2">Teléfonos:</p>
-      <p>300 631 7790 | 317 382 1846</p>
+  <section id="contacto" class="py-20 px-6 text-center bg-[var(--azul-profundo)] text-white">
+    <h3 class="text-3xl font-semibold mb-6 text-[var(--dorado-elegante)]">Contacto</h3>
+    <p class="text-lg mb-2">Correo electrónico:</p>
+    <a href="mailto:betmanjavier@hotmail.com" class="text-xl font-medium hover:underline text-[var(--dorado-elegante)]">
+      betmanjavier@hotmail.com
+    </a>
+    <div class="mt-6">
+      <p class="text-lg">Teléfonos:</p>
+      <p class="text-xl font-semibold">300 631 7790 | 317 382 1846</p>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="py-6 text-center text-gray-400">
-    <p>&copy; 2025 Betman Javier Marín Rueda - Todos los derechos reservados.</p>
+  <footer class="bg-[var(--azul-profundo)] text-center text-white py-6">
+    <p>&copy; 2025 Betman Javier Marín Rueda. Todos los derechos reservados.</p>
   </footer>
 
   <script>
-    // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
+    lucide.createIcons();
+
+    let indice = 0;
+    const carrusel = document.getElementById('slider');
+    const total = carrusel.children.length;
+
+    function mover(direccion) {
+      indice = (indice + direccion + total) % total;
+      carrusel.style.transform = `translateX(-${indice * 100}%)`;
+    }
   </script>
 </body>
 </html>
+
+
