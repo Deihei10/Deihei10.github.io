@@ -1,6 +1,0 @@
-VIDEOS DEL PORTAFOLIO
-
-- presentacion-proyecto.mp4: video de presentación (ya incluido).
-- video-complementario.mp4: video complementario (ya incluido).
-- video-pitch-marco-referencia.mp4: video pitch de máximo 3 minutos para el eBook (agregar cuando esté listo).
-No cambies los nombres sin modificar también index.html.
